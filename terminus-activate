@@ -1,0 +1,52 @@
+Sublime text 4 কিভাবে টার্মিনাস Terminus ব্যবহার করতে হয়
+1. Node.js install করতে হবে/ 
+2. npm = Node Package Manager install করতে হবে/ Node js এর সাথে npm বিল্ড ইন অবস্থায় থাকে/ তাই আলাদাভাবে npm ইন্সটল করার দরকার নেই/ 
+3. cmd or Windows Powershell run  করে Node -v , npm -v টাইপ করুন/ যদি ভার্সন দেখা যায়/ তাহলে বুঝতে হবে ইন্সটল হয়েছে/ 
+4. Preferences>Browse Packages> user ফোল্ডারের ভিতরে একটি ফাইল ক্রিয়েট করতে হবে ফাইলের নাম হবে C++ in terminus.sublime-build এবং এখানে নিম্নের করতে দিতে হবে এবং Save করতে হবে
+5. Tools > Build System > Automatic  এ c++ in Terminus অ্যাড হবে / কিন্তু এখানে automatic সিলেক্ট করতে হবে
+{
+	"target": "terminus-exec",
+	"cancel": "terminus_cancel_build",
+	"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}\"",
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+	"working_dir": "${file_path}",
+	"selector": "source.c++",
+
+	"variants":
+	[
+		{
+			"name": "Run",
+			"shell_cmd": "g++ \"${file}\" -o \"${file_path}/${file_base_name}\" && \"${file_path}/${file_base_name}\""
+		}
+	]
+}
+
+4. Package control প্যাকেজ কন্ট্রোল ইনস্টল করতে হবে/ Ctrl+Shift+p
+5. Install packages  ইন্সটল প্যাকেজেস Ctrl+Shift+p 
+6. Terminus install করতে হবে/ 
+7. 
+8. Tools>Command palette> [ টাইপ করুন] terminus(Terminus:open default shell in panel) click করতে হবে
+
+=============================================
+ps আমি কোন কমান্ড লাইনটা ব্যবহার করতেছি সেটা দেখার জন্য
+ls কারেন্ট ডিরেক্টরীতে  কি কি জিনিস আছে সেটা দেখার জন্য
+cd চেঞ্জ ডিরেক্টরী
+cd .. একটি ফোল্ডার পিছনে যাওয়ার জন্য / সিডির পরে স্পেস দিতে হবে / এরপর দুইটা ডট
+dir কারেন্ট ডিরেক্টরীতে কি কি আছে সেটা দেখার জন্য
+node -v নোট ভার্সন দেখার জন্য
+npm -v এনপিএম ভার্সন দেখার জন্য
+cd 'folder name' ফোল্ডারের নামে যদি স্পেস থাকে তাহলে কোটেশনের ভেতরে লিখতে হবে
+cd foldername  ফোল্ডারের নামে যদি স্পেস না থাকে তাহলে সরাসরি লিখতে হবে
+cd\ রুট ফোল্ডারে যেতে পারবেন
+mkdir foldername কারেন্ট দিরেক্টরিতে ফোল্ডার তৈরি করার জন্য
+rmdir foldername কারেন্ট ডিরেক্টরিতে ফোল্ডার ডিলিট করার জন্য
+touch filename.txt যেকোনো ধরনের ফাইল তৈরি করার জন্য/ ফাইল নেম ডট এক্সটেনশন দিয়ে দেবেন
+rm filename.txt ফাইল কে ডিলিট করার জন্য
+cat filename.txt ফাইলের ভিতরে কি জিনিসপত্র বা কনটেন্ট আছে তা দেখার জন্য
+(এক্সাম্পল cat index.html এই ফাইলের ভিতরে কি কোড আছে তা দেখতে পাবেন)
+start index.html , text.txt এই ফাইলটি ডিফল্ট ব্রাউজারে অথবা এডিটরে ওপেন হবে 
+start firefox index.html, start firefox text.txt এই ফাইলটি ফায়ারফক্স ওপেন হবে/ যে সফটওয়্যার ওপেন করতে যাচ্ছেন সেই সফটওয়্যার এর নামটি দিয়ে দিতে হবে
+clear কমান্ড লাইন ক্লিয়ার করার জন্য/সবগুলো কমান্ড মুছে ফেলার জন্য
+
+
+
